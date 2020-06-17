@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  node:
+    image: node:lts
+    restart: always
+    volumes:
+      - ./:/app
+    tty: true
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./data/db:/data/db
+
